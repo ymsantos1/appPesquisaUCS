@@ -27,7 +27,8 @@ class Projeto(models.Model):
     situacao = models.CharField(max_length=100, choices=OPCOES_SITUACAO)
     natureza = models.CharField(max_length=100)
     criado_em = models.DateField(default=datetime.date.today)
-    membros = models.ManyToManyField(Pesquisador, through="PesquisadorProjeto")
+    # membros = models.ManyToManyField(Pesquisador, through="PesquisadorProjeto")
+    #membros is a many to many with Pesquisador Projeto, so we can use the related name to get the pesquisador
 
     def __str__(self):
         return self.nome
